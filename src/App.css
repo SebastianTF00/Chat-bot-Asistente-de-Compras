@@ -1,0 +1,152 @@
+/* --- Estilos Globales y Contenedor --- */
+body {
+    background-color: #f0f2f5;
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.chat-container {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #ffffff;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* --- Cabecera --- */
+.chat-header {
+    background: #000000;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* --- Ventana de Mensajes --- */
+.messages-window {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* Fondo blanco para evitar manchas negras */
+    gap: 15px;
+}
+
+/* --- Filas y Burbujas --- */
+.message-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: transparent !important; /* Limpia cualquier fondo residual */
+}
+
+.message-row.bot {
+    align-items: flex-start;
+}
+
+.message-row.user {
+    align-items: flex-end;
+}
+
+.bubble {
+    max-width: 75%; /* Ajustado para que no ocupen todo el ancho nuevo */
+    padding: 12px 18px;
+    font-size: 15px; /* Un poquito más grande para mejorar la legibilidad */
+    line-height: 1.5;
+}
+
+/* Burbuja del Bot (Gris) */
+.bubble.bot {
+    background: #e9e9eb;
+    color: #000000;
+    border-radius: 18px;
+    border-bottom-left-radius: 4px;
+}
+
+/* Burbuja del Usuario (Negra) */
+.bubble.user {
+    background: #000000;
+    color: #ffffff;
+    border-radius: 18px;
+    border-bottom-right-radius: 4px;
+}
+
+/* --- Botones de Opciones (Manzanas, etc.) --- */
+.options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+    max-width: 90%;
+}
+
+.option-button {
+    background: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 7px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.option-button:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+/* --- Área de Entrada de Texto --- */
+.input-area {
+    padding: 15px 20px;
+    display: flex;
+    gap: 10px;
+    background: #ffffff;
+    border-top: 1px solid #eeeeee;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+    border-radius: 25px; /* Estilo redondeado moderno */
+    outline: none;
+    font-size: 14px;
+}
+
+.input-area input:focus {
+    border-color: #000000;
+}
+
+.send-button {
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 0 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.send-button:hover {
+    background: #333333;
+}
+
+/* Custom Scrollbar */
+.messages-window::-webkit-scrollbar {
+    width: 6px;
+}
+
+.messages-window::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 10px;
+}
