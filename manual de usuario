@@ -1,0 +1,31 @@
+MANUAL DE USUARIO: PASOS PARA CONFIGURAR Y EJECUTAR EL SISTEMA
+Este manual describe estrictamente los comandos y pasos necesarios para instalar las dependencias y encender ambos servidores (Backend y Frontend) del proyecto.
+1. Requisitos Previos
+Asegúrese de tener instalado en su equipo:
+•	Python (Versión 3.10 o superior)
+•	Node.js (Versión 18.0 o superior)
+2. Preparación e Instalación de Dependencias
+Abra su terminal o consola de comandos y ubíquese en la ruta raíz del proyecto: G:\Idea\Exp 5\Chat-bot-Asistente-de-Compras
+Paso A: Instalar librerías del Backend (Python)
+Ejecute el siguiente comando para instalar las herramientas necesarias del servidor:
+Bash
+pip install fastapi uvicorn
+Paso B: Instalar librerías del Frontend (React)
+En la terminal, asegúrese de estar en la carpeta donde se encuentra el archivo package.json y ejecute:
+Bash
+npm install
+3. Pasos para Encender y Correr el Sistema
+Para que la aplicación funcione de extremo a extremo, debe mantener dos terminales abiertas en paralelo:
+TERMINAL 1: Servidor Backend (Python)
+1.	Abra una terminal en la ruta del backend.
+2.	Ejecute el siguiente comando para iniciar el servidor de desarrollo:
+Bash
+python -m uvicorn Main:app --reload
+(Nota: Si su sistema no reconoce el comando 'python', intente reemplazando la palabra inicial por py, quedando así: py -m uvicorn Main:app --reload).
+El servidor backend estará activo e interactuando en la dirección: http://localhost:8000
+TERMINAL 2: Servidor Frontend (React / Vite)
+1.	Abra una segunda terminal diferente en la ruta del frontend.
+2.	Ejecute el siguiente comando para compilar e iniciar la interfaz gráfica:
+Bash
+npm run dev
+El sistema le arrojará una dirección local en pantalla (típicamente http://localhost:5173). Copie esa URL, péguela en su navegador web y el sistema se desplegará completamente funcional.
